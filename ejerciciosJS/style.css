@@ -1,0 +1,21 @@
+h1{
+    color:white;
+}
+
+h2{
+    color: white;
+}
+h3{
+    color:white;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.espaciado{
+    padding: 50px;
+}
+
+body{
+    color: white;
+    background-color: black;
+}
