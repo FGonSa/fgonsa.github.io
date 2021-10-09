@@ -1,14 +1,7 @@
-h1{
-    color:white;
-}
-
-h2{
-    color: white;
-}
 h3{
-    color:white;
     text-align: center;
     text-decoration: underline;
+    margin-top: 50px;
 }
 
 .espaciado{
@@ -16,6 +9,11 @@ h3{
 }
 
 body{
-    color: white;
-    background-color: black;
+    
+    background-color: rgb(255, 186, 83);
+}
+
+.titulo{
+    text-align: center;
+    text-decoration: underline;
 }
