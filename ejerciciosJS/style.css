@@ -9,7 +9,7 @@ h3{
 }
 
 body{
-    background-color: rgb(255, 186, 83);
+  background: linear-gradient(180deg, #ffcd00 0%, #e97c94 100%);
 }
 
 .titulo{
