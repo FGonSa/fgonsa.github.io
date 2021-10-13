@@ -1,13 +1,247 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
+    <!--META TAGS-->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Git de Fran</title>
+
+    <!--CSS: BOOSTSTRAP, FONTAWESOME & OWN CSS-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Probando Booststrap</title>
 </head>
+
 <body>
-  <h1>GIT DE FRAN</h1>
-    <p>Proyecto en Blanco</p>
+    <!--NAVBAR-->
+
+    <nav class="navbar sticky-top navbar-expand-lg bg-primary navbar-dark">
+        <div class="container">
+            <img src="src/img/logo.png" alt="" width="4%" style="margin-right: 10px;">
+            <a href="#" class="navbar-brand">F5antos</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link text-white">Sobre mí</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#formacion" class="nav-link text-white">Formación</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#habilidades" class="nav-link text-white">Habilidades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#proyectos" class="nav-link text-white">Proyectos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contacto" class="nav-link text-white">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="p-auto"></div>
+
+    <!--SHOWCASE-->
+    <section class="bg-info text-dark p-5" id="subbarra">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-7">
+                    <div class="d-sm-flex">
+                        <div>
+                            <h1 id="titulo">F5antos</h1>
+                            <h6>Frank González Santos · Desarrollador Web</h6>
+                            <p class="lead" style="font-weight: bold;">¡Bienvenido a mi espacio personal!</p>
+                            <P class="lead me-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique
+                                dolores non quam doloremque,
+                                eveniet commodi magni quae, impedit soluta nemo quibusdam deserunt quis, debitis a cum.
+                                Enim
+                                ratione architecto quia.
+                            </P>
+                        </div>
+                    </div>
+                </div>
+                <img src="src/img/monitor.png" class="img-fluid w-25 ms-5" alt="">
+                <div class="ms-auto"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-transparent text-light p-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-7">
+                    <div class="d-sm-flex">
+                        <div>
+                            <h2 id="titulo">Sobre Mí</h2>
+                            <P class="lead me-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique
+                                dolores non quam doloremque,
+                                eveniet commodi magni quae, impedit soluta nemo quibusdam deserunt quis, debitis a cum.
+                                Enim
+                                ratione architecto quia.
+                            </P>
+                        </div>
+                    </div>
+                </div>
+                <img src="src/img/fotoCV.jpg" class="img-fluid w-25 ms-5" alt="" id="fotoCV">
+                <div class="ms-auto"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-info text-dark p-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-7">
+                    <div class="d-sm-flex">
+                        <div>
+                            <h2 id="titulo">Formación</h2>
+                            <P class="lead me-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique
+                                dolores non quam doloremque,
+                                eveniet commodi magni quae, impedit soluta nemo quibusdam deserunt quis, debitis a cum.
+                                Enim
+                                ratione architecto quia.
+                            </P>
+                        </div>
+                    </div>
+                </div>
+                <img src="src/img/programming.png" class="img-fluid w-25 ms-5" alt="">
+                <div class="ms-auto"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-transparent text-light p-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-7">
+                    <div class="d-sm-flex">
+                        <div>
+                            <h2 id="titulo">Habilidades</h2>
+                            <P class="lead me-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique
+                                dolores non quam doloremque,
+                                eveniet commodi magni quae, impedit soluta nemo quibusdam deserunt quis, debitis a cum.
+                                Enim
+                                ratione architecto quia.
+                            </P>
+                        </div>
+                    </div>
+                </div>
+                <img src="src/img/design.png" class="img-fluid w-25 ms-5" alt="">
+                <div class="ms-auto"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-primary text-light p-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-7">
+                    <div class="d-sm-flex">
+                        <div>
+                            <h2 id="titulo">Proyectos</h2>
+                            <P class="lead me-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique
+                                dolores non quam doloremque,
+                                eveniet commodi magni quae, impedit soluta nemo quibusdam deserunt quis, debitis a cum.
+                                Enim
+                                ratione architecto quia.
+                            </P>
+                        </div>
+                    </div>
+                </div>
+                <img src="src/img/design.png" class="img-fluid w-25 ms-5" alt="">
+                <div class="ms-auto"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-secondary text-light p-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-7">
+                    <div class="d-sm-flex">
+                        <div>
+                            <h2 id="titulo">Contacto</h2>
+                            <P class="lead me-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique
+                                dolores non quam doloremque,
+                                eveniet commodi magni quae, impedit soluta nemo quibusdam deserunt quis, debitis a cum.
+                                Enim
+                                ratione architecto quia.
+                            </P>
+                        </div>
+                    </div>
+                </div>
+                <img src="src/img/design.png" class="img-fluid w-25 ms-5" alt="">
+                <div class="ms-auto"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-center text-white p-2">
+        Encuéntrame en:
+        <!-- Grid container -->
+        <div class="container p-2">
+            <!-- Section: Social media -->
+            <section class="mb-1">
+                <!-- Facebook -->
+                <a class="btn btn-outline-dark btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-facebook-f"></i></a>
+
+                <!-- Twitter -->
+                <a class="btn btn-outline-dark btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-twitter"></i></a>
+
+                <!-- Google -->
+                <a class="btn btn-outline-dark btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-google"></i></a>
+
+                <!-- Instagram -->
+                <a class="btn btn-outline-dark btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-instagram"></i></a>
+
+                <!-- Linkedin -->
+                <a class="btn btn-outline-dark btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-linkedin-in"></i></a>
+
+                <!-- Github -->
+                <a class="btn btn-outline-dark btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-github"></i></a>
+            </section>
+            <!-- Section: Social media -->
+
+
+            <!-- Copyright -->
+            <div class="text-center p-3"">
+      © 
+      <a class=" text-white" href="https://mdbootstrap.com/">Frank Santos</a>
+            </div>
+            <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+    <!--CARROUSEL-->
+
+    <!--CONTAINER-->
+
+    <!--RIBBON-->
+
+    <!--FOOTER-->
+
+
+    <!--SCRIPTS JS-->
+    <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/js/all.js"
+        integrity="sha512-3g7yqwo1stj1EMzNXYPbV8pqgW0ZhaQsi9iyMP+hvQCIFcdt0AWw5onarTYjklFtIuCf/RvE2MGnr+5tZ1WzFQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
+
 </html>
