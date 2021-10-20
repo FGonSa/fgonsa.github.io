@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Demo</title>
+</head>
+
+<body>
+
+    <!--NAVBAR-->
+    <nav class="navbar navbar-expand-sm navbar-light bg-white">
+        <div class="container-fluid">
+            <!--LOGO-->
+            <a class="navbar-brand" href="">
+                <img src="img/logoCEP.png" alt="" width="200">
+            </a>
+
+            <!--BOTÓN DESPLEGABLE-->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toogle navigation">
+                <span class="navbar-toggler-icon">
+                </span>
+            </button>
+
+            <!--MENÚ DESPLEGABLE-->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li classs="nav-item">
+                        <a class="nav-link" href="#">El Centre</a>
+                    </li>
+                    <li classs="nav-item">
+                        <a class="nav-link" href="#">Graus</a>
+                    </li>
+                    <li classs="nav-item">
+                        <a class="nav-link" href="#">L'Equip</a>
+                    </li>
+                    <li classs="nav-item">
+                        <a class="nav-link" href="#">Pla d'Actuació</a>
+                    </li>
+                    <li classs="nav-item">
+                        <a class="nav-link" href="#">On som</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--FIN DE LA NAVBAR-->
+    </nav>
+
+    <!--CAROUSEL-->
+
+    <!--INDICADORES SLIDES-->
+    <div id="myCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+            <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+        </ol>
+
+        <!--SLIDE 1-->
+        <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="img/cep01.jpg" alt="First slide">
+                <div class="carousel-caption">
+                    <div class="container">
+                        <div class="row justify-content">
+                            <div class="col-8 bg-custom d-none d-sm-block py-3 px-0">
+                                <h4>El Centre</h4>
+                                <div class="border-top border-primary w-50 mx-auto my-3"></div>
+                                <h5 class="pb-3">Coneix les nostres instal·lacions</h5>
+                                <a href="#" class="btn btn-danger btn-lg ml-2" data-bs-toggle="modal"
+                                    data-bs-target="#myModal"><strong>VISITA'NS</strong></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--SLIDE 2-->
+            <div class="carousel-item">
+                <img class="d-block w-100" src="img/cep02.jpg" alt="Second slide">
+            </div>
+
+            <!--SLIDE 3-->
+            <div class="carousel-item">
+                <img class="d-block w-100" src="img/cep033.jpg" alt="Third slide">
+            </div>
+        </div>
+
+        <!--BOTONES CAROUSEL-->
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden"></span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden"></span>
+        </a>
+    </div>
+    <!--FIN CAROUSEL-->
+    </div>
+
+    <!--MODAL-->
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-title">ON SOM</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close">X</button>
+                </div>
+                <div class="modal-body">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia corporis, voluptas, eaque labore
+                        molestias minus dolorem saepe debitis nostrum veniam impedit velit possimus tenetur vel maiores
+                        qui, ab culpa asperiores.</p>
+                </div>
+            </div>
+        </div>
+        <!--FIN MODAL-->
+    </div>
+
+    <!--MODAL JUEGOS-->
+    <div class="modal fade" id="myModal2" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-title">LOGIN</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close">X</button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">Tu correo no será utilizado por terceros.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div>
+                            <label for="registro" class="form-text">¿Aún no estás registrado? <br> <a h="#"> Click aquí.</a> <br><br></label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Entrar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--FIN MODAL-->
+    </div>
+
+
+    <!--RIBBON-->
+    <div id="ribbon" class="container-fluid">
+        <div id="birthday" class="container w-50 pl-5">
+            <div class="row align-items-center">
+                <div class="col-sm p-3">
+                    <img src="img/gamepad.png" alt="" class="w-75 mx-auto d-block">
+                </div>
+                <div class="col-sm p-3 text-light text-center">
+                    <h4>Prova els nostres jocs!</h4>
+                    <a href="#" class="btn btn-warning btn-lg ml-2" data-bs-toggle="modal"
+                        data-bs-target="#myModal2"><strong>JUGAR</strong></a>
+                </div>
+            </div>
+        </div>
+        <!--FIN RIBBON-->
+    </div>
+
+    <!--FOOTER-->
+
+    <!--SCRIPTS JS-->
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
