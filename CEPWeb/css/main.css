@@ -1,9 +1,7 @@
-body{
-    width: auto;
-}
+
 
 #ribbon {
-    background-color: rgb(6, 92, 184);
+    background-color: rgb(185, 171, 143);
 }
 
 
@@ -75,11 +73,11 @@ body{
 }
 
 .carousel-control-next-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='blue' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='red' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
 }
 
 .carousel-control-prev-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='blue' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='red' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
 }
 
 .carousel-indicators>li {
@@ -93,5 +91,17 @@ body{
 }
 
 .carousel .carousel-indicators li.active {
-    background-color: rgb(0, 217, 255);
+    background-color: rgb(182, 12, 7);
 }
+
+.border-footer{
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.p-car-top{
+    padding-top: 15px;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+}
+/*============= NAVBAR =============*/

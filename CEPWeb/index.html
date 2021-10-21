@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
     <title>CEP Politècnics</title>
@@ -33,22 +36,31 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="#">El Centro</a>
                     </li>
                     <li classs="nav-item">
-                        <a class="nav-link" href="#">El Centre</a>
+                        <a class="nav-link" href="#">Equipo</a>
                     </li>
                     <li classs="nav-item">
-                        <a class="nav-link" href="#">Graus</a>
+                        <a class="nav-link" href="#">Aprendizaje</a>
                     </li>
                     <li classs="nav-item">
-                        <a class="nav-link" href="#">L'Equip</a>
+                        <a class="nav-link" href="#">Grados</a>
                     </li>
                     <li classs="nav-item">
-                        <a class="nav-link" href="#">Pla d'Actuació</a>
+                        <a class="nav-link" href="#contacto">Contacto</a>
                     </li>
-                    <li classs="nav-item">
-                        <a class="nav-link" href="#">On som</a>
+                    <li>
+                        <div class="top-bar">
+                            <div class="col-12 ml-auto">
+                                <div class="col-12">
+                                    <img src="img/spanish.png" alt="" width="40">
+                                    <img src="img/cat.png" alt="" width="40">
+                                    <img src="img/english.png" alt="" width="40">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
                     </li>
                 </ul>
             </div>
@@ -56,57 +68,76 @@
         <!--FIN DE LA NAVBAR-->
     </nav>
 
+    <!--NAVBAR JUEGOS-->
+    <nav class="navbar navbar-expand-sm navbar-light bg-warning">
+        <div class="container-fluid">
+            <div class="m-auto p-auto text-black align-content-center text-center">
+                <img src="img/gamepad.png" alt="" width="40px">
+                <a href="#" style="color: black;" data-bs-toggle="modal" data-bs-target="#myModal2">¡Descubre la
+                    experiencia Politècnics completa jugando a nuestros
+                    juegos!</a>
+                <img src="img/gamepad.png" alt="" width="40px"></div>
+        </div>
+        </div>
+        <!--FIN DE LA NAVBAR JUEGOS-->
+    </nav>
+
     <!--CAROUSEL-->
+    <div class="container-fluid">
 
-    <!--INDICADORES SLIDES-->
-    <div id="myCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
-            <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
-            <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
-        </ol>
+        <!--INDICADORES SLIDES-->
+        <div id="myCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+                <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+                <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+            </ol>
 
-        <!--SLIDE 1-->
-        <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active">
-                <img class="d-block w-100" src="img/cep01.jpg" alt="First slide">
-                <div class="carousel-caption">
-                    <div class="container">
-                        <div class="row justify-content">
-                            <div class="col-8 bg-custom d-none d-sm-block py-3 px-0">
-                                <h4>El Centre</h4>
-                                <div class="border-top border-primary w-50 mx-auto my-3"></div>
-                                <h5 class="pb-3">Coneix les nostres instal·lacions</h5>
-                                <a href="#" class="btn btn-danger btn-lg ml-2" data-bs-toggle="modal"
-                                    data-bs-target="#myModal"><strong>VISITA'NS</strong></a>
+            <div class="carousel-inner py-3" role="listbox">
+
+                <!--SLIDE 1-->
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="img/cepStudents (1).jpg" alt="First slide">
+                    <div class="carousel-caption">
+                        <div class="container">
+                            <div class="row justify-content">
+                                <div class="col-8 bg-custom py-3 px-0 m-auto">
+                                    <h4>El Centre</h4>
+                                    <div class="border-top border-primary w-50 mx-auto my-3"></div>
+                                    <h5 class="pb-3">Coneix les nostres instal·lacions</h5>
+                                    <a href="#" class="btn btn-danger btn-lg ml-2" data-bs-toggle="modal"
+                                        data-bs-target="#myModal"><strong>VISITA'NS</strong></a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!--SLIDE 2-->
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="img/cep01.jpg" alt="Second slide">
+                </div>
+
+                <!--SLIDE 3-->
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="img/cep02.jpg" alt="Third slide">
+                </div>
             </div>
 
-            <!--SLIDE 2-->
-            <div class="carousel-item">
-                <img class="d-block w-100" src="img/cep02.jpg" alt="Second slide">
-            </div>
-
-            <!--SLIDE 3-->
-            <div class="carousel-item">
-                <img class="d-block w-100" src="img/cep033.jpg" alt="Third slide">
-            </div>
+            <!--BOTONES CAROUSEL-->
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden"></span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden"></span>
+            </a>
         </div>
-
-        <!--BOTONES CAROUSEL-->
-        <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden"></span>
-        </a>
-        <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden"></span>
-        </a>
+        <!--FIN CAROUSEL-->
     </div>
-    <!--FIN CAROUSEL-->
+
+
     </div>
 
     <!--MODAL-->
@@ -148,7 +179,8 @@
                             <input type="password" class="form-control" id="exampleInputPassword1">
                         </div>
                         <div>
-                            <label for="registro" class="form-text">¿Aún no estás registrado? <br> <a h="#"> Click aquí.</a> <br><br></label>
+                            <label for="registro" class="form-text">¿Aún no estás registrado? <br> <a h="#"> Click
+                                    aquí.</a> <br><br></label>
                         </div>
                         <button type="submit" class="btn btn-primary">Entrar</button>
                     </form>
@@ -160,23 +192,72 @@
 
 
     <!--RIBBON-->
-    <div id="ribbon" class="container-fluid">
-        <div id="birthday" class="container w-50 pl-5">
-            <div class="row align-items-center">
-                <div class="col-sm p-3">
-                    <img src="img/gamepad.png" alt="" class="w-75 mx-auto d-block">
-                </div>
-                <div class="col-sm p-3 text-light text-center">
-                    <h4>Prova els nostres jocs!</h4>
-                    <a href="#" class="btn btn-warning btn-lg ml-2" data-bs-toggle="modal"
-                        data-bs-target="#myModal2"><strong>JUGAR</strong></a>
+    <div class="container-fluid">
+        <div id="ribbon" class="container-fluid">
+            <div id="birthday" class="container w-25 pl-5">
+                <div class="row align-items-center">
+                    <div class="col-sm p-3 text-light">
+                        <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum voluptates modi, ex
+                            delectus, deserunt culpa mollitia sit, ipsam velit voluptatibus quidem. Libero dolor
+                            veritatis asperiores. Voluptas id sequi ad quam?</h4>
+                    </div>
                 </div>
             </div>
+            <!--FIN RIBBON-->
         </div>
-        <!--FIN RIBBON-->
-    </div>
 
-    <!--FOOTER-->
+        <!-- Footer -->
+        <footer class="bg-dark text-center text-white p-2 border-footer" id="contacto">
+            Contacto: <br>
+            <a href="info@politecnics.barcelona" style="color: white;">info@politecnics.barcelona</a>
+            <!-- Grid container -->
+            <div class="container p-2">
+                <!-- Section: Social media -->
+                <section class="mb-1">
+                    <!-- Facebook -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                            class="fab fa-facebook-f"></i></a>
+
+                    <!-- Twitter -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                            class="fab fa-twitter"></i></a>
+
+                    <!-- Instagram -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                            class="fab fa-instagram"></i></a>
+                </section>
+                <!-- Section: Social media -->
+                <div class="container my-2">
+                    <div class="row py-3">
+                        <div class="col-lg-6 mb-4 my-lg-auto">
+                            <p class="mb-4">Nos puedes encontrar justo delante de la parada de metro Urquinaona, L4.</p>
+                            <p>Lunes a viernes, de 09:30 a 21:00 hrs<BR>
+                                Sabados, de 10:00 a 14:00 hrs<br></p>
+                        </div>
+                        <div class="col-lg-5"><iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d187.0832558295121!2d2.173273849023766!3d41.388593789216564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2f05d87e503%3A0xab731bbefe4caef5!2sPl.%20Urquinaona%2C%2010%2C%2008010%20Barcelona!5e0!3m2!1ses!2ses!4v1614879662103!5m2!1ses!2ses"
+                                width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+        </footer>
+        <!-- Footer -->
+
+
+        <!-- Start Socket -->
+        <div class="socket text-dark text-center py-3">
+            <p>&copy; <a href="http://" target="_blank">CEP SoftConsulting</a><br>Todos los derechos reservados.</p>
+            <button type="button" class="btn btn-outline-primary"><i class="fas fa-user-cog"> Admin </i></button>
+        </div>
+
+        <!-- End Socket -->
+
+
+        <div class="container-fluid py-2">
+
+        </div>
+
+    </div>
 
     <!--SCRIPTS JS-->
     <script src="js/popper.min.js"></script>
