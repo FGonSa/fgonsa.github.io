@@ -1,3 +1,5 @@
 Programación
 Base de Datos
 Proyecto
+Javascript
+PHP
