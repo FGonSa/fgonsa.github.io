@@ -1,0 +1,445 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    background: #444;
+    display: flex;
+    align-items: center;
+}
+
+.contenedor {
+    width: 920px;
+    height: 280px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#060483ad, #1f73b8);
+}
+
+.player {
+    width: 84px;
+    height: 84px;
+    position: absolute;
+    bottom: 22px;
+    left: 42px;
+    z-index: 2;
+
+    background: url(/dino.png) repeat-x 0px 0px;
+    background-size: 336px 84px;
+    background-position-x: 0px;
+}
+
+.player-run {
+    animation: animarPlayer 0.25s steps(2) infinite;
+}
+
+.player-hit {
+    background-position-x: -252px;
+}
+
+@keyframes animarPlayer {
+    from {
+        background-position-x: -84px;
+    }
+
+    to {
+        background-position-x: -252px;
+    }
+}
+
+.suelo {
+    width: 200%;
+    height: 42px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: url(/suelo.png) repeat-x 0px 0px;
+    background-size: 50% 42px;
+}
+
+.score {
+    width: 100px;
+    height: 30px;
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    z-index: 10;
+    color: gold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: right;
+}
+
+.cactus {
+    width: 46px;
+    height: 96px;
+    position: absolute;
+    bottom: 16px;
+    left: 680px;
+    z-index: 1;
+    background: url(/cactus1.png) no-repeat;
+}
+
+.nube {
+    width: 92px;
+    height: 26px;
+    position: absolute;
+    z-index: 0;
+    background: url(/nube.png) no-repeat;
+    background-size: 92px 26px;
+}
+
+.game-over {
+    display: none;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: #fdfdfd;
+    font-size: 30px;
+    font-family: Verdana;
+    font-weight: 700;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+
+}
+/** QUIZ */
+.bodyQuiz {
+    font-size: 20px;
+    font-family: monospace;
+}
+
+#container {
+    margin: 150px auto;
+    background-color: rgb(154, 193, 216);
+    height: 300px;
+    width: 700px;
+    border-radius: 5px;
+    box-shadow: 0px 5px 15px 0px;
+    position: relative;
+}
+
+#start2 {
+    font-size: 1.5em;
+    font-weight: bolder;
+    word-break: break-all;
+    width: 150px;
+    height: 150px;
+    border: 2px solid lightgrey;
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    left: 300px;
+    top: 65px;
+    color: lightgrey;
+}
+
+#start2:hover {
+    border: 3px solid lightseagreen;
+    color: lightseagreen;
+}
+
+#logo {
+    color: red;
+    margin-top: 50px;
+}
+
+#qImg {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+#qImg img {
+    width: 200px;
+    height: 200px;
+    border-top-left-radius: 5px;
+}
+
+#question {
+    width: 500px;
+    height: 125px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#question p {
+    margin: 0;
+    padding: 15px;
+    font-size: 1.25em;
+}
+
+#choices {
+    width: 480px;
+    position: absolute;
+    right: 0;
+    top: 125px;
+    padding: 10px
+}
+
+.choice {
+    display: inline-block;
+    width: 135px;
+    text-align: center;
+    border: 1px solid grey;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.choice:hover {
+    border: 2px solid grey;
+    font-weight: bold;
+}
+
+#timer {
+    position: absolute;
+    height: 100px;
+    width: 200px;
+    bottom: 0px;
+    text-align: center;
+}
+
+#counter {
+    font-size: 3em;
+}
+
+#btimeMedidor {
+    width: 150px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: lightgray;
+    margin-left: 25px;
+}
+
+#timeMedidor {
+    height: 10px;
+    border-radius: 10px;
+    background-color: mediumseagreen;
+    margin-top: -10px;
+    margin-left: 25px;
+}
+
+#progress {
+    width: 500px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    padding: 5px;
+    text-align: right;
+}
+
+.prog {
+    width: 25px;
+    height: 25px;
+    border: 1px solid #000;
+    display: inline-block;
+    border-radius: 50%;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#scoreContainer {
+    margin: 20px auto;
+    background-color: white;
+    opacity: 0.8;
+    height: 300px;
+    width: 700px;
+    border-radius: 5px;
+    box-shadow: 0px 5px 15px 0px;
+    position: relative;
+    display: none;
+}
+
+#scoreContainer img {
+    position: absolute;
+    padding: 50px;
+    top: 20px;
+    left: 325px;
+}
+
+#scoreContainer p {
+    position: absolute;
+    align-items: center;
+    display: flex;
+    width: 59px;
+    height: 59px;
+    top: 130px;
+    left: 325px;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+}
+
+/** TRANSICIÓN */
+
+
+.wrapper{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup{
+    opacity: 0;
+    visibility: hidden;
+    height: 400px;
+    width: 400px;
+    flex-shrink: 0;
+    border-radius: 3px;
+    position: relative;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease
+}
+
+.popup-inside{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 50%;
+    box-shadow: 0 0 0 black;
+    transition:
+            box-shadow 0.5s ease 0.7s,
+            border-radius 0.35s ease 0.7s;
+}
+
+.backgrounds{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.background{
+    --offset: 0;
+    position: absolute;
+    left: var(--offset);
+    right: var(--offset);
+    bottom: var(--offset);
+    top: var(--offset);
+    background: linear-gradient(to right, #504bff, #4cfa63);
+    transform: scale(0);
+    transition: all 0.5s ease 0s;
+    border-radius: 50%;
+}
+
+.background2{
+    --offset: 10%;
+    position: absolute;
+    left: var(--offset);
+    right: var(--offset);
+    bottom: var(--offset);
+    top: var(--offset);
+    background: linear-gradient(to right, #6665ff, #69fa7f);
+    transform: scale(0);
+    transition: all 0.5s ease 0.1s;
+}
+
+.background3{
+    --offset: 20%;
+    position: absolute;
+    left: var(--offset);
+    right: var(--offset);
+    bottom: var(--offset);
+    top: var(--offset);
+    background: linear-gradient(to right, #8583ff, #85fa99);
+    z-index: 2;
+    transition: all 0.5s ease 0.2s;
+}
+
+.background4{
+    --offset: 30%;
+    position: absolute;
+    left: var(--offset);
+    right: var(--offset);
+    bottom: var(--offset);
+    top: var(--offset);
+    background: linear-gradient(to right, #aaaaff, #a7fab7);
+    z-index: 3;
+    transition: all 0.5s ease 0.3s;
+}
+
+.background5{
+    --offset: 40%;
+    position: absolute;
+    left: var(--offset);
+    right: var(--offset);
+    bottom: var(--offset);
+    top: var(--offset);
+    background: linear-gradient(to right, #c9c8ff, #c3fad1);
+    z-index: 4;
+    transition: all 0.5s ease 0.4s;
+}
+
+.background6{
+    --offset: 40%;
+    position: absolute;
+    left: var(--offset);
+    right: var(--offset);
+    bottom: var(--offset);
+    top: var(--offset);
+    background: white;
+    z-index: 5;
+    transition: all 0.8s ease 0.4s;
+}
+
+.content{
+    --offset: 0;
+    position: absolute;
+    left: var(--offset);
+    right: var(--offset);
+    bottom: var(--offset);
+    top: var(--offset);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.35s ease 0.75s;
+    z-index: 10;
+}
+
+.content-wrapper{
+    text-align: center;
+}
+
+body.active .content{
+    opacity: 1;
+    transform: none;
+}
+
+body.active .popup{
+    opacity: 1;
+    visibility: visible;
+}
+
+body.active .popup-inside{
+    border-radius: 0;
+    box-shadow: -50px 0 200px -50px #504bff, 50px 0 200px -50px #4cfa63;
+}
+
+body.active .background{
+    transform: scale(1);
+}
+
+body.active .background6{
+    transform: scale(8);
+}
