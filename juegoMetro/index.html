@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RUN TO POLITÈCNICS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chango&family=Roboto+Mono:wght@300&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- 
+
+ <section class="game">
+        <div class="titulo">
+            <h1>RUN TO POLITÈCNICS!</h1>
+            <img src="./banner.png" alt="" id="banner">
+        </div>
+        <section class="screen screen-intro active-screen">
+            <div class="button button-play" id="btn-play">PLAY</div>
+            <div class="button button-ranking" id="btn-ranking">RANKING</div>
+            <div class="button button-credits" id="btn-credits">CREDITS</div>
+        </section>
+
+        <section class="screen screen-play">
+            SELECT MODE
+            <div class="button button-junior" id="btn-junior">JUNIOR</div>
+            <div class="button button-expert" id="btn-expert">EXPERT</div>
+            <div class="button button-start" id="btn-play">START!!</div>
+        </section>
+    -->
+
+    <div class="contador">&#9203;
+        <span id="mostrarContador"></span>
+    </div>
+    <div class="contenedor">
+        <div class="metro"></div>
+        <div class="suelo"></div>
+        <div class="rotulo"></div>
+        <div class="fondo"></div>
+        <div class="player player-run"></div>
+        <div class="score">0</div>
+
+        <!--TRANSICIÓN-->
+        <div class="wrapper">
+            <div class="popup">
+                <div class="popup-inside">
+                    <div class="backgrounds">
+                        <div class="background"></div>
+                        <div class="background background2"></div>
+                        <div class="background background3"></div>
+                        <div class="background background4"></div>
+                        <div class="background background5"></div>
+                        <div class="background background6"></div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="content-wrapper">
+                        <div id="container">
+                            <div id="quiz" style="display: none">
+                                <div id="question"></div>
+                                <div id="qImg"></div>
+                                <div id="choices">
+                                    <div class="choice" id="A" onclick="checkAnswer('A')"></div>
+                                    <div class="choice" id="B" onclick="checkAnswer('B')"></div>
+                                    <div class="choice" id="C" onclick="checkAnswer('C')"></div>
+                                </div>
+                                <div id="timer">
+                                    <div id="counter"></div>
+                                    <div id="btimeMedidor"></div>
+                                    <div id="timeMedidor"></div>
+                                </div>
+                                <div id="progress"></div>
+                            </div>
+                            <div id="scoreContainer" style="display: none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="vida" id="vida1"></div>
+    <div class="vida" id="vida2"></div>
+    <div class="vida" id="vida3"></div>
+    <div class="contador" id="show"></div>
+    <!--FIN TRANSICIÓN-->
+    </div>
+    <div class="game-over">GAME OVER</div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
