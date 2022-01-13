@@ -1,0 +1,1101 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+}
+
+/*------------------------------------------------------
+HEADER: MENÚ NAVEGACIÓN
+-------------------------------------------------------*/
+header {
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 80px;
+    transition: 0.5s ease;
+}
+
+header .brand {
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+header .navigation {
+    position: relative;
+}
+
+header .navigation .navigation-items a {
+    position: relative;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: 0.3s ease;
+}
+
+header .navigation .navigation-items a:before {
+    content: "";
+    position: absolute;
+    background: gold;
+    /*subrayado de las secciones*/
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s ease;
+}
+
+header .navigation .navigation-items a:hover:before {
+    width: 100%;
+}
+
+/**------------------------------------------------------
+**SECCIONES
+**-------------------------------------------------------*/
+
+section {
+    padding: 100px 200px;
+}
+
+/*------------------------------------------------------
+SECCIÓN HOME: VIDEO-BANNER
+-------------------------------------------------------*/
+.home {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: #2696e9;
+    /*Color animación videos*/
+}
+
+.home:before {
+    z-index: 777;
+    content: "";
+    position: absolute;
+    background: rgba(3, 96, 251, 0.3);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    box-shadow: rgba(93, 90, 50, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+        rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.home .content {
+    z-index: 888;
+    color: #fff;
+    width: 70%;
+    margin-top: 50px;
+    display: none;
+}
+
+.home .content.active {
+    display: block;
+}
+
+.home .content.active p span {
+    color: gold;
+}
+
+.home .content h1 {
+    font-size: 4em;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    line-height: 75px;
+    margin-bottom: 40px;
+}
+
+.home .content h1 span {
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.home .content p {
+    text-shadow: 0 3px 4px rgba(0, 0, 0, 0.35);
+    margin-bottom: 65px;
+}
+
+.home .content a {
+    background: #fff;
+    padding: 15px 35px;
+    color: #1680ac;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 2px;
+}
+
+.home .content a:hover {
+    background-color: #1680ac;
+    color: white;
+}
+
+.home video {
+    z-index: 000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*BOTÓN CONTACTO*/
+.home .media-icons {
+    z-index: 888;
+    display: inline-block;
+    position: fixed;
+    flex-direction: column;
+    transition: 0.5s ease;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.home .media-icons a {
+    color: #fff;
+    font-size: 1.6em;
+    transition: 0.3s ease;
+}
+
+.home .media-icons a:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.home .media-icons a:hover {
+    background-color: orange;
+}
+
+.contacto {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contacto li {
+    position: absolute;
+    list-style: none;
+    left: -15px;
+    transform-origin: 100px;
+    transition: 0.5s;
+    transition-delay: calc(0.1s * var(--i));
+    transform: rotate(0deg) translateX(100px);
+}
+
+.contacto.active li {
+    /*Ángulo de circunferencia*/
+    transform: rotate(calc(190deg / 5 * var(--i)));
+}
+
+.contacto li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    transform: rotate(calc(180deg / -5 * var(--i)));
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
+    color: rgb(255, 255, 255);
+    transition: 0.5s;
+    text-decoration: none;
+}
+
+.contacto li a:hover {
+    color: red;
+}
+
+.toggle {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+    font-size: 2em;
+    transition: transform 1.25s;
+    background: white;
+}
+
+.contacto.active .toggle {
+    transform: rotate(360deg);
+}
+
+/**ICONOS */
+.fa-at {
+    color: black;
+}
+
+.fa-facebook-f {
+    color: black;
+}
+
+.fa-instagram {
+    color: black;
+}
+
+.fa-twitter {
+    color: black;
+}
+
+.fa-phone-alt {
+    color: black;
+}
+
+/*TRANSICIONES VIDEO*/
+.video-slide {
+    position: absolute;
+    width: 100%;
+    clip-path: circle(0% at 0 50%);
+}
+
+.video-slide.active {
+    clip-path: circle(150% at 0 50%);
+    transition: 2s ease;
+    transition-property: clip-path;
+}
+
+/*SEPARADOR DE SECCIONES*/
+.separator {
+    background-color: #fff;
+    padding: 1.5px;
+}
+
+/*------------------------------------------------------
+SECCIÓN CONTENIDO: FORMATO DEL CONTENIDO
+-------------------------------------------------------*/
+.contenido {
+    background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+    height: auto;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-shadow: 0 1px 0 #ccc, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3),
+        0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
+        0 20px 20px rgba(0, 0, 0, 0.15);
+}
+
+.contenido .content {
+    z-index: 888;
+    color: rgb(0, 0, 0);
+    width: 70%;
+    margin-top: 50px;
+}
+
+.contenido .content.active {
+    display: block;
+}
+
+.contenido .content h2 {
+    font-size: 2em;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    color: #000000;
+}
+
+.contenido .content h2 span {
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.contenido .content p {
+    margin-bottom: 65px;
+}
+
+.contenido .content a {
+    background: rgb(20, 5, 87);
+    padding: 15px 35px;
+    color: #ffffff;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 50px;
+    border-style: dashed;
+    border: 2px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+}
+
+.contenido .content a:hover {
+    color: #ffffff !important;
+    background: #ffffff;
+    background: linear-gradient(to top, rgb(9, 90, 122), #1572db);
+}
+
+/*------------------------------------------------------
+SECCIÓN BANNER-JUEGOS: FORMATO DEL CONTENIDO
+-------------------------------------------------------*/
+
+.grid-frase {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: minmax(20px, auto);
+    text-align: center;
+    background: url(../img/bannerFrase2.jpg);
+    box-shadow: rgba(93, 90, 50, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+        rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.grid-frase .content h2 {
+    font-size: 3em;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    line-height: 65px;
+    margin-bottom: 15px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.grid-frase .content p {
+    padding: auto;
+    justify-content: center;
+    text-shadow: 0 1px 0 rgb(20, 9, 9), 0 6px 1px rgba(255, 251, 251, 0.1), 0 0 5px rgba(255, 255, 255, 0.1),
+        0 1px 3px rgba(255, 248, 248, 0.3), 0 3px 5px rgba(255, 255, 255, 0.2), 0 5px 10px rgba(255, 255, 255, 0.25),
+        0 10px 10px rgba(255, 255, 255, 0.2), 0 20px 20px rgba(255, 246, 246, 0.15);
+}
+
+.grid-frase .content a {
+    background: #1680ac;
+    padding: 15px 35px;
+    color: white;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.grid-frase .content a:hover {
+    background: #0b3b50;
+}
+
+/*------------------------------------------------------
+SECCIÓN BANNER-GRADOS: FORMATO DEL CONTENIDO
+-------------------------------------------------------*/
+
+.grid-grados {
+    color: white;
+    gap: 2em;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto 100px;
+    object-fit: cover;
+    text-align: start;
+    /*background: rgb(192, 189, 189);*/
+    background-image: url(../img/chica.png);
+    background-size: cover;
+    box-shadow: rgba(93, 90, 50, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+        rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.grid-grados .content h2 {
+    color: #212529;
+    font-size: 3em;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    line-height: 65px;
+    margin-bottom: 15px;
+}
+
+.grid-grados .content p {
+    padding: auto;
+    text-align: start;
+    justify-content: start;
+    text-shadow: 0 1px 0 #ccc, 0 6px 1px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
+        0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.grid-grados .content a {
+    background: white;
+    padding: 15px 35px;
+    color: #1680ac;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.grid-grados span {
+    color: #1680ac;
+    text-shadow: none;
+}
+
+.grid-grados .content a:hover {
+    background: #0b3b50;
+}
+
+/*------------------------------------------------------
+LOGOS GENERALITAT
+-------------------------------------------------------*/
+.contenedor-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(93, 90, 50, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+        rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.img-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+
+}
+
+.grid-logos {
+    width: 80%;
+
+    border: #1572db;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+/*------------------------------------------------------
+FOOTER
+-------------------------------------------------------*/
+.footer {
+    display: grid;
+
+    gap: 1rem;
+    grid-template-rows: 8rem 8rem;
+    color: white;
+    background-color: #212529;
+    padding: 40px;
+}
+
+.footer .content {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    margin-top: 50px;
+}
+
+.footer .content-redes {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    margin-bottom: 50px;
+}
+
+.footer .separatorVertical {
+
+    border-bottom: 4px solid rgb(255, 255, 255);
+    height: 300px;
+}
+
+.footer .content-redes i {
+    color: white;
+}
+
+.footer-admin {
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.footer .footer-btn {
+    text-decoration: none;
+    width: 80px;
+    margin-top: 30px;
+    color: #000000;
+    background-color: white;
+    border-radius: 5%;
+    padding: 10px;
+    align-items: center;
+}
+
+.footer .footer-btn:hover {
+    background-color: #000000;
+    color: white;
+}
+
+ /*------------------------------------------------------
+PÁGINA JUEGOS
+-------------------------------------------------------*/
+
+
+.grid-juegos {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: minmax(20px, auto);
+    align-items: center;
+    text-align: center;
+    background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+    background-position: center center;
+    background-size: cover;
+}
+
+.grid-juegos-games {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: minmax(20px, auto);
+    gap: 0.5em;
+    align-items: center;
+    text-align: center;
+}
+
+.grid-juegos .content h2 {
+    font-size: 3em;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    line-height: 65px;
+    margin-bottom: 15px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.grid-juegos .content p {
+    padding: auto;
+    justify-content: center;
+    text-shadow: 0 1px 0 rgb(20, 9, 9), 0 6px 1px rgba(255, 251, 251, 0.1), 0 0 5px rgba(255, 255, 255, 0.1),
+        0 1px 3px rgba(255, 248, 248, 0.3), 0 3px 5px rgba(255, 255, 255, 0.2), 0 5px 10px rgba(255, 255, 255, 0.25),
+        0 10px 10px rgba(255, 255, 255, 0.2), 0 20px 20px rgba(255, 246, 246, 0.15);
+}
+
+.grid-juegos .aventura {
+    color: rgb(139, 14, 189);
+    text-shadow: 0 1px 0 rgb(20, 9, 9), 0 6px 1px rgba(255, 251, 251, 0.1), 0 0 5px rgba(255, 255, 255, 0.1),
+        0 1px 3px rgba(255, 248, 248, 0.3), 0 3px 5px rgba(255, 255, 255, 0.2), 0 5px 10px rgba(255, 255, 255, 0.25),
+        0 10px 10px rgba(255, 255, 255, 0.2), 0 20px 20px rgba(255, 246, 246, 0.15);
+}
+
+.grid-juegos .content a {
+    background: #1680ac;
+    padding: 15px 35px;
+    color: white;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.grid-juegos .content a:hover {
+    background: #0b3b50;
+}
+
+.juego1Giff {
+    background-size: cover;
+    background-image: url(../img/JUEGO1.gif);
+    filter: brightness(0.7);
+    width: 420px;
+    height: 305px;
+    border-radius: 4%;
+}
+
+.juego1Giff:hover {
+    border: 5px solid #1572db;
+    filter: brightness(1);
+}
+
+.juego2Giff {
+    background-size: cover;
+    background-image: url(../img/JUEGO2.gif);
+    filter: grayscale(1) contrast(0.4) brightness(1.4);
+    /* opacity: 50%; */
+    width: 420px;
+    height: 305px;
+    border-radius: 4%;
+}
+
+.juego3Giff {
+    background-size: cover;
+    background-image: url(../img/JUEGO3.gif);
+    filter: grayscale(1) contrast(0.4) brightness(1.4);
+    width: 420px;
+    height: 305px;
+    border-radius: 4%;
+}
+
+.juego4Giff {
+    background-size: cover;
+    background-image: url(../img/JUEGO4.gif);
+    background-color: rgb(19, 17, 14);
+    filter: grayscale(1) contrast(0.4) brightness(1.4);
+    /* opacity: 50%; */
+    width: 420px;
+    height: 305px;
+    border-radius: 4%;
+}
+
+@font-face {
+    font-family: "textoJuegos";
+    src: url(../fuentes/Gameplay.ttf);
+}
+
+.juegoTexto {
+    margin-top: 25px;
+    font-family: "textoJuegos";
+    font-size: 37px;
+    opacity: 100%;
+    text-align: center;
+    text-shadow: -2px -2px 2px rgb(255, 255, 255), 2px 2px 2px rgb(255, 255, 255), -2px 2px 2px rgb(255, 255, 255), 2px -2px 2px rgb(255, 255, 255);
+}
+
+.botonJuego {
+    width: 15%;
+}
+
+.contenedorBoton {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+/*------------------------------------------------------
+MEDIA QUERYS para DISEÑO RESPONSIVE
+-------------------------------------------------------*/
+@media (max-width: 1040px) {
+    header {
+        padding: 12px 20px;
+    }
+
+    section {
+        padding: 100px 20px;
+    }
+
+    .home .media-icons {
+        right: 15px;
+    }
+
+    header .navigation {
+        display: none;
+    }
+
+    .bannerJuegos {
+        padding: 70px 20px;
+    }
+
+    header .navigation.active {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(1, 1, 1, 0.5);
+    }
+
+    header .navigation .navigation-items a {
+        color: #222;
+        font-size: 1.2em;
+        margin: 20px;
+    }
+
+    header .navigation .navigation-items a:before {
+        background: #222;
+        height: 5px;
+    }
+
+    header .navigation.active .navigation-items {
+        background: #fff;
+        width: 600px;
+        max-width: 600px;
+        margin: 20px;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 5px;
+        box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
+    }
+
+    .menu-btn {
+        background: url(../img/menu.png) no-repeat;
+        background-size: 30px;
+        background-position: center;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        transition: 0.3s ease;
+        padding: 30px;
+    }
+
+    .menu-btn.active {
+        z-index: 999;
+        background: url(../img/menu.png) no-repeat;
+        background-size: 25px;
+        background-position: center;
+        transition: 0.3s ease;
+    }
+
+    .grid-juegos {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: auto;
+        align-items: center;
+        text-align: center;
+        background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+        background-position: center center;
+        background-size: cover;
+    }
+
+    .grid-juegos-games {
+margin-left: 50px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: minmax(20px, auto);
+        gap: 0.2em;
+        align-items: center;
+        text-align: center;
+    }
+
+    
+    .grid-juegos .content h2 {
+        font-size: 2.5em;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        line-height: 65px;
+        margin-bottom: 15px;
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+    }
+
+    .grid-juegos .content p {
+        padding: auto;
+        justify-content: center;
+        text-shadow: 0 1px 0 rgb(20, 9, 9), 0 6px 1px rgba(255, 251, 251, 0.1), 0 0 5px rgba(255, 255, 255, 0.1),
+            0 1px 3px rgba(255, 248, 248, 0.3), 0 3px 5px rgba(255, 255, 255, 0.2), 0 5px 10px rgba(255, 255, 255, 0.25),
+            0 10px 10px rgba(255, 255, 255, 0.2), 0 20px 20px rgba(255, 246, 246, 0.15);
+    }
+
+    .grid-juegos .aventura {
+        color: rgb(139, 14, 189);
+        text-shadow: 0 1px 0 rgb(20, 9, 9), 0 6px 1px rgba(255, 251, 251, 0.1), 0 0 5px rgba(255, 255, 255, 0.1),
+            0 1px 3px rgba(255, 248, 248, 0.3), 0 3px 5px rgba(255, 255, 255, 0.2), 0 5px 10px rgba(255, 255, 255, 0.25),
+            0 10px 10px rgba(255, 255, 255, 0.2), 0 20px 20px rgba(255, 246, 246, 0.15);
+    }
+
+    .grid-juegos .content a {
+        background: #1680ac;
+        padding: 15px 35px;
+        color: white;
+        font-size: 1.1em;
+        font-weight: 500;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-top: 20px;
+    }
+
+    .grid-juegos .content a:hover {
+        background: #0b3b50;
+    }
+    
+    .juego1Giff {
+        background-size: cover;
+        background-image: url(../img/JUEGO1.gif);
+        filter: brightness(0.7);
+        width: 320px;
+        height: 205px;
+        border-radius: 4%;
+    }
+
+    .juego1Giff:hover {
+        border: 5px solid #1572db;
+        filter: brightness(1);
+    }
+    
+    .juego2Giff:hover {
+        border: 5px solid #1572db;
+        filter: brightness(1);
+    }
+
+    .juego3Giff:hover {
+        border: 5px solid #1572db;
+        filter: brightness(1);
+    }
+
+    .juego4Giff:hover {
+        border: 5px solid #1572db;
+        filter: brightness(1);
+    }
+    .juego2Giff {
+        background-size: cover;
+        background-image: url(../img/JUEGO2.gif);
+        filter: grayscale(1) contrast(0.4) brightness(1.4);
+        /* opacity: 50%; */
+        width: 320px;
+        height: 205px;
+        border-radius: 4%;
+    }
+
+    .juego3Giff {
+        background-size: cover;
+        background-image: url(../img/JUEGO3.gif);
+        filter: grayscale(1) contrast(0.4) brightness(1.4);
+        width: 320px;
+        height: 205px;
+        border-radius: 4%;
+    }
+
+    .juego4Giff {
+        background-size: cover;
+        background-image: url(../img/JUEGO4.gif);
+        background-color: rgb(19, 17, 14);
+        filter: grayscale(1) contrast(0.4) brightness(1.4);
+        /* opacity: 50%; */
+        width: 320px;
+        height: 205px;
+        border-radius: 4%;
+
+    }
+}
+
+@media (max-width: 560px) {
+    .home .content h1 {
+        font-size: 3em;
+        line-height: 60px;
+    }
+
+    .home .content p {
+        text-shadow: 0 3px 4px rgba(0, 0, 0, 0.35);
+    }
+
+    .home .content a {
+        padding: 10px;
+    }
+
+    .home a {
+        border-radius: 50%;
+        display: block;
+        text-align: center;
+    }
+
+    .contacto {
+        position: relative;
+        width: 50px;
+        height: 90px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contacto li {
+        position: absolute;
+        list-style: none;
+        left: -15px;
+        transform-origin: 100px;
+        transition: 0.5s;
+        transition-delay: calc(0.1s * var(--i));
+        transform: rotate(0deg) translateX(40px);
+        opacity: 0;
+    }
+
+    .contacto.active li {
+        /*Ángulo de circunferencia*/
+        transform: translateX(-40px);
+        opacity: 1;
+    }
+
+    .contacto li a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        background: white;
+        border-radius: 50%;
+        transform: translateX(calc(220px / -5 * var(--i)));
+        box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
+        color: rgb(255, 255, 255);
+        transition: 0.5s;
+        text-decoration: none;
+    }
+
+    .grid-grados {
+        color: white;
+        gap: 1em;
+        background-image: url(../img/chica.png);
+        background-size: cover;
+        background-position-x: -250px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto 100px;
+        text-align: start;
+        box-shadow: rgba(93, 90, 50, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+            rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    }
+
+    .grid-grados .content {
+        margin-left: 55px;
+    }
+
+    .grid-grados .content h2 {
+        font-size: 2.5em;
+    }
+
+    .grid-grados .content p {
+        text-shadow: 0 1px 0 #ccc, 0 6px 1px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3),
+            0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .grid-grados .content a {
+        margin-left: 150px;
+    }
+
+    .grid-grados #contenidoChicaGrados {
+        display: none;
+    }
+
+    .grid-grados span {
+        color: black;
+        text-shadow: 0 1px 0 rgb(20, 9, 9), 0 6px 1px rgba(255, 251, 251, 0.1), 0 1px 3px rgba(255, 248, 248, 0.3),
+            0 3px 5px rgba(255, 255, 255, 0.2), 0 5px 10px rgba(255, 255, 255, 0.25),
+            0 10px 10px rgba(255, 255, 255, 0.2), 0 20px 20px rgba(255, 246, 246, 0.15);
+    }
+
+
+    
+    .grid-juegos {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: auto;
+        align-items: center;
+        text-align: center;
+        background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+        background-position: center center;
+        background-size: cover;
+    }
+
+    .grid-juegos-games {
+        margin-left: 100px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: minmax( auto);
+        gap: 0.5em;
+        align-items: center;
+        text-align: center;
+    }
+
+    
+    .grid-juegos .content h2 {
+        font-size: 2.5em;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        line-height: 65px;
+        margin-bottom: 15px;
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+    }
+
+    .grid-juegos .content p {
+        padding: auto;
+        justify-content: center;
+        text-shadow: 0 1px 0 rgb(20, 9, 9), 0 6px 1px rgba(255, 251, 251, 0.1), 0 0 5px rgba(255, 255, 255, 0.1),
+            0 1px 3px rgba(255, 248, 248, 0.3), 0 3px 5px rgba(255, 255, 255, 0.2), 0 5px 10px rgba(255, 255, 255, 0.25),
+            0 10px 10px rgba(255, 255, 255, 0.2), 0 20px 20px rgba(255, 246, 246, 0.15);
+    }
+
+    .grid-juegos .aventura {
+        color: rgb(139, 14, 189);
+        text-shadow: 0 1px 0 rgb(20, 9, 9), 0 6px 1px rgba(255, 251, 251, 0.1), 0 0 5px rgba(255, 255, 255, 0.1),
+            0 1px 3px rgba(255, 248, 248, 0.3), 0 3px 5px rgba(255, 255, 255, 0.2), 0 5px 10px rgba(255, 255, 255, 0.25),
+            0 10px 10px rgba(255, 255, 255, 0.2), 0 20px 20px rgba(255, 246, 246, 0.15);
+    }
+
+    .grid-juegos .content a {
+        background: #1680ac;
+        padding: 15px 35px;
+        color: white;
+        font-size: 1.1em;
+        font-weight: 500;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-top: 20px;
+    }
+
+    /* .grid-juegos .content a:hover {
+        background: #0b3b50;
+    } */
+    
+    .juego1Giff {
+        background-size: cover;
+        background-image: url(../img/JUEGO1.gif);
+        filter: brightness(0.7);
+        width: 220px;
+        height: 105px;
+        border-radius: 4%;
+    }
+
+    .juego1Giff:hover {
+        border: 5px solid #1572db;
+        filter: brightness(1);
+    }
+
+    .juego2Giff:hover {
+        border: 5px solid #1572db;
+        filter: brightness(1);
+    }
+
+    .juego3Giff:hover {
+        border: 5px solid #1572db;
+        filter: brightness(1);
+    }
+
+    .juego4Giff:hover {
+        border: 5px solid #1572db;
+        filter: brightness(1);
+    }
+
+    .juego2Giff {
+        background-size: cover;
+        background-image: url(../img/JUEGO2.gif);
+        filter: grayscale(1) contrast(0.4) brightness(1.4);
+        /* opacity: 50%; */
+        width: 220px;
+        height: 105px;
+        border-radius: 4%;
+    }
+
+    .juego3Giff {
+        background-size: cover;
+        background-image: url(../img/JUEGO3.gif);
+        filter: grayscale(1) contrast(0.4) brightness(1.4);
+        width: 220px;
+        height: 105px;
+        border-radius: 4%;
+    }
+
+    .juego4Giff {
+        background-size: cover;
+        background-image: url(../img/JUEGO4.gif);
+        background-color: rgb(19, 17, 14);
+        filter: grayscale(1) contrast(0.4) brightness(1.4);
+        /* opacity: 50%; */
+        width: 220px;
+        height: 105px;
+        border-radius: 4%;
+    }
+}
+
