@@ -358,7 +358,7 @@ SECCIÓN BANNER-JUEGOS: FORMATO DEL CONTENIDO
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: minmax(20px, auto);
     text-align: center;
-    background: url(../img/bannerFrase2.jpg);
+    background: url(bannerFrase2.jpg);
     box-shadow: rgba(93, 90, 50, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
         rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
@@ -409,7 +409,7 @@ SECCIÓN BANNER-GRADOS: FORMATO DEL CONTENIDO
     object-fit: cover;
     text-align: start;
     /*background: rgb(192, 189, 189);*/
-    background-image: url(../img/chica.png);
+    background-image: url(chica.png);
     background-size: cover;
     box-shadow: rgba(93, 90, 50, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
         rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
@@ -744,7 +744,7 @@ MEDIA QUERYS para DISEÑO RESPONSIVE
 
     .menu-btn.active {
         z-index: 999;
-        background: url(../img/menu.png) no-repeat;
+        background: url(menu.png) no-repeat;
         background-size: 25px;
         background-position: center;
         transition: 0.3s ease;
