@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM EVENTS</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="eventos"><strong>EVENTOS</strong></h1>
+<p>Los eventos son acciones que disparan ciertas funciones de código.</p>
+<p>Cuando el usuario presiona un botón, espera un cierto tiempo, redimensiona la pantalla…</p>
+<p>Existen una gran variedad de eventos que podemos utilizar para dotar de dinamismo al DOM de nuestras páginas web.</p>
+<p>Gracias a estos, podemos conseguir una mejor interactividad con el usuario, y por ende, una mejor experiencia de usuario.</p>
+<p>A continuación voy a destacar algunos elementos a tener en cuenta respecto a los eventos:</p>
+<ul>
+<li>
+<h3 id="event-handler">Event Handler</h3>
+</li>
+</ul>
+<p>Cuando se activa un evento en JavaScript (como una pulsación de tecla o un movimiento del mouse), se ejecuta un <em>controlador de eventos</em> en respuesta, estos son conocidos como Event Handler. Cada handler se registra en un elemento, conectando el controlador tanto a un elemento como a un tipo de evento (pulsación de tecla, por ejemplo). Un método llamado <code>.addEventListener()</code> actúa como detector de eventos, esperando que ocurra un evento para especificar lo que debe suceder como respuesta y llamar al controlador de eventos.<br>
+Por lo general, y resumiendo mucho, los Event Handler son la función a ejecutar cuando se dispara el evento.</p>
+<ul>
+<li>
+<h3 id="addeventlistener">.addEventListener()</h3>
+</li>
+</ul>
+<p>Este método nos permite indicar que esperamos una cierta acción. Cuando dicha acción es recogida, se ejecuta el código programado.<br>
+Por ejemplo:</p>
+<pre><code>let botonStart = document.getElementById("boton-start");
+
+botonStart.addEventListener('click', ()=&gt;{
+alert("Ha sido pulsado el botón Start");
+});
+</code></pre>
+<button id="boton-start">Botón Start</button>
+<p>El método recoge dos parámetros, el primero, es el evento que tiene que capturar; y el segundo, es la función que ejecutará cuando se produzca el evento.<br>
+En este ejemplo, estamos indicando que cuando se pulse (“click”) el botón, se ejecute un alert.<br>
+Para dejar de escuchar el evento, se utiliza el método .removeEventListener().</p>
+<ul>
+<li>
+<h3 id="eventos-de-teclado">Eventos de teclado</h3>
+</li>
+</ul>
+<p><em>Los eventos de teclado</em> describen una interacción del usuario con el teclado. Cada evento describe una interacción separada con una tecla del teclado por parte del usuario, que luego se almacenan con la propiedad <code>.key</code> .</p>
+<ul>
+<li>
+<p><code>keydown</code> los eventos se activan cuando se presiona la tecla por primera vez.</p>
+</li>
+<li>
+<p><code>keyup</code> los eventos se activan cuando se suelta la tecla.</p>
+</li>
+<li>
+<p><code>keypress</code> los eventos se activan cuando el usuario presiona una tecla que produce un valor de carácter, esto excluye a teclas como BloqMayús o el Shift.</p>
+<p id="broma"> Prueba a pulsar la tecla espacio.</p>
+</li>
+<li>
+<h3 id="eventos-de-ratón">Eventos de ratón</h3>
+</li>
+</ul>
+<p>Un <em>evento de mouse se</em> activa cuando un usuario interactúa con el ratón, ya sea haciendo clic o moviendo el dispositivo.</p>
+<ul>
+<li><code>click</code>: los eventos se activan cuando el usuario presiona <strong>y</strong> suelta un botón del mouse en un elemento.</li>
+<li><code>mouseout</code>: los eventos se activan cuando el mouse abandona un elemento.</li>
+<li><code>mouseover</code>: los eventos se activan cuando el mouse ingresa o se posiciona sobre el contenido de un elemento. En CSS, sería equivalente a un :hover.</li>
+<li><code>mousedown</code>: los eventos se activan cuando el usuario presiona un botón del mouse.</li>
+<li><code>mouseup</code>: los eventos se activan cuando el usuario suelta el botón del mouse.</li>
+</ul>
+</div>
+<p>Frank Santos - 2022 <br>
+Escrito utilizando Markdown.</p>
+
+<script src="script.js"></script>
+</body>
+
+</html>
