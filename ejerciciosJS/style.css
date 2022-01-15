@@ -1,22 +1,9 @@
-html{
-    scroll-behavior: smooth;
+a{
+    color: rgb(39, 104, 90);
 }
 
-h3{
-    text-align: center;
-    text-decoration: underline;
-    margin-top: 50px;
-}
-
-.espaciado{
-    padding: 50px;
-}
-
-body{
-  background: linear-gradient(180deg, #ffcd00 0%, #e97c94 100%);
-}
-
-.titulo{
-    text-align: center;
-    text-decoration: underline;
+img{
+    padding: 5px;
+    border-radius: 16px;
+     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;;
 }
