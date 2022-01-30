@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue Mastery</title>
+    <!-- Import Styles -->
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <!-- Import Vue.js -->
+    <script src="https://unpkg.com/vue@3.0.0-beta.12/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="nav-bar"></div>
+      <p>
+
+        “Add a link to your data object, and use v-bind to sync it up with an anchor tag in your HTML. Hint: you’ll be binding to the href attribute.”
+      </p>
+      <p>Click en la imagen para ir a Google</p>
+      <div class="product-display">
+        <div class="product-container">
+          <div class="product-image">
+            <!-- image goes here -->
+            <a v-bind:href="url">
+              <img v-bind:src="image" alt="" srcset="">
+            </a>
+          </div>
+          <div class="product-info">
+            <h1>{{ product }}</h1>
+            <p>{{ description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Import App -->
+    <script src="./main.js"></script>
+
+    <!-- Mount App -->
+    <script>
+      const mountedApp = app.mount('#app')
+    </script>
+  </body>
+</html>
