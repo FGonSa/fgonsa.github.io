@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue Mastery</title>
+    <!-- Import Styles -->
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <!-- Import Vue.js -->
+    <script src="https://unpkg.com/vue@3.0.0-beta.12/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="nav-bar"></div>
+      <p style="margin-left: 50px">
+
+        1. “Add an onSale property to the product’s data that is used to conditionally render a span that says “On Sale!””<br>
+        2. “Add an array of sizes to the data and use v-for to display them in a list.”<br>
+      </p>
+
+      <div class="product-display">
+        <div class="product-container">
+          <div class="product-image">
+            <!-- image goes here -->
+            <a v-bind:href="url">
+              <img v-bind:src="image" alt="" srcset="">
+            </a>
+          </div>
+          <div class="product-info">
+            <h1>{{ product }}</h1>
+            <p>{{ description }}</p>
+            <p v-if="stock">En Stock</p>
+            <p v-else>Ya no quedan :( </p><br>
+            <p>LISTA DE TALLAS:</p>
+            <ul>
+              <li v-for="detail in details">{{ detail }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Import App -->
+    <script src="./main.js"></script>
+
+    <!-- Mount App -->
+    <script>
+      const mountedApp = app.mount('#app')
+    </script>
+  </body>
+</html>
