@@ -69,12 +69,10 @@ app.component('producto-display', {
     },
     methods: {
         addCesta() {
-            this.cesta += 1
+            this.$emit('add-cesta', this.variants[this.selectedVariant].id)
         },
         restarCesta() {
-            if (this.cesta > 0) {
-                this.cesta -= 1
-            }
+            this.$emit('restar-cesta', this.variants[this.selectedVariant].id)
         },
         cambiarStock() {
             if (this.stock) {
