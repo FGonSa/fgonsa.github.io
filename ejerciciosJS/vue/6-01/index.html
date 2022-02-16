@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Componentes & Props</title>
+  <!-- Import Styles -->
+  <link rel="stylesheet" href="./assets/styles.css" />
+  <!-- Import Vue.js -->
+  <script src="https://unpkg.com/vue@3.0.0-beta.12/dist/vue.global.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <div class="nav-bar"></div>
+    <p style="margin-left: 50px">
+
+      “Create a new component for product-details with a prop of details.”
+
+    </p>
+
+    <div class="cart">Cesta({{ cesta }})</div>
+
+    <producto-display :premium="premium" :details="details"></producto-display>
+    <producto-display></producto-display>
+    <producto-display></producto-display>
+  </div>
+
+  <!-- Import App -->
+  <script src="./main.js"></script>
+
+  <!-- Import Component -->
+  <script src="./components/ProductoDisplay.js"></script>
+  <script src="./components/ProductDetails.js"></script>
+
+  <!-- Mount App -->
+  <script>
+    const mountedApp = app.mount('#app')
+  </script>
+</body>
+
+</html>
