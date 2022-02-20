@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CicloController;
+use App\Http\Controllers\CursoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +16,36 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('plantilla.index');
 });
+
+
+/*
+|--------------------------------------------------------------------------
+| CICLOS
+|--------------------------------------------------------------------------
+*/
+
+//INDEX
+Route::get('/ciclos', [CicloController::class, 'index']);
+
+//ELIMINAR CICLO A PARTIR DE ID
+Route::delete('/ciclos/{id}', [CicloController::class, 'destroy']);
+
+//CREAR CICLO
+Route::get('/ciclos/create', [CicloController::class, 'create']);
+
+//GUARDAR DATOS CICLO
+Route::post('/ciclos', [CicloController::class, 'store']);
+
+
+/*
+|--------------------------------------------------------------------------
+| CURSOS
+|--------------------------------------------------------------------------
+*/
+
+//INDEX
+Route::get('/cursos', [CursoController::class, 'index']);
+
+Route::resource('cursos',CursoController::class);

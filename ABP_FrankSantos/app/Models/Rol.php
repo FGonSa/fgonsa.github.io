@@ -5,24 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Ciclo extends Model
+class Rol extends Model
 {
     use HasFactory;
-
-    protected $table = 'cicles';
+    protected $table = 'rols';
     //Por defecto ya vienen estos valores
     // protected $primary_key = 'id';
     // public $incrementing = true;
     public $timestamps = false;//debemos indicar a Eloquent que no tenemos timestamps
-
-
-    public function cursos()
+    /**
+     * Get all of the usuarios fl
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function usuarios()
     {
-        return $this->hasMany(Curso::class, 'cicles_id');
-    }
-
-    public function modulos()
-    {
-        return $this->hasMany(Modulo::class, 'cicles_id');
+        return $this->hasMany(Usuario::class, 'rols_id');
     }
 }

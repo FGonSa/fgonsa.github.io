@@ -14,7 +14,7 @@ class CicloController extends Controller
      */
     public function index()
     {
-        //
+        return view('ciclos.index');
     }
 
     /**

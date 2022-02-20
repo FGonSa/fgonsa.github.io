@@ -5,24 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Ciclo extends Model
+class Rubrica extends Model
 {
     use HasFactory;
-
-    protected $table = 'cicles';
+    protected $table = 'rubriques';
     //Por defecto ya vienen estos valores
     // protected $primary_key = 'id';
     // public $incrementing = true;
     public $timestamps = false;//debemos indicar a Eloquent que no tenemos timestamps
-
-
-    public function cursos()
+    /**
+     * Get all of the competencies_detall for the Rubrica
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function competencies_detall()
     {
-        return $this->hasMany(Curso::class, 'cicles_id');
-    }
-
-    public function modulos()
-    {
-        return $this->hasMany(Modulo::class, 'cicles_id');
+        return $this->belongsTo(Competencias_Detalle::class, 'competencies_detall_id');
     }
 }

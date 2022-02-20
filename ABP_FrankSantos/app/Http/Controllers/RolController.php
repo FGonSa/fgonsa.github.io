@@ -2,27 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Curso;
+use App\Models\Rol;
 use Illuminate\Http\Request;
 
-class CursoController extends Controller
+class RolController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $actiu = $request->input('actiuBuscar');
-
-        if ($actiu == 'actiu') {
-            $cursos = Curso::where('actiu', '=', true)->paginate(5)->withQueryString();
-        } else {
-            $cursos = Curso::paginate(5);
-        }
-        $request->session()->flashInput($request->input());
-        return view('cursos.index', compact('cursos'));
+        //
     }
 
     /**
@@ -32,7 +24,7 @@ class CursoController extends Controller
      */
     public function create()
     {
-        return view('cursos.create');
+        //
     }
 
     /**
@@ -49,10 +41,10 @@ class CursoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Curso  $curso
+     * @param  \App\Models\Rol  $rol
      * @return \Illuminate\Http\Response
      */
-    public function show(Curso $curso)
+    public function show(Rol $rol)
     {
         //
     }
@@ -60,10 +52,10 @@ class CursoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Curso  $curso
+     * @param  \App\Models\Rol  $rol
      * @return \Illuminate\Http\Response
      */
-    public function edit(Curso $curso)
+    public function edit(Rol $rol)
     {
         //
     }
@@ -72,10 +64,10 @@ class CursoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Curso  $curso
+     * @param  \App\Models\Rol  $rol
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Curso $curso)
+    public function update(Request $request, Rol $rol)
     {
         //
     }
@@ -83,10 +75,10 @@ class CursoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Curso  $curso
+     * @param  \App\Models\Rol  $rol
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Curso $curso)
+    public function destroy(Rol $rol)
     {
         //
     }
