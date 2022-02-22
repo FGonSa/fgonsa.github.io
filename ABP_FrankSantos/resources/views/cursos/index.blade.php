@@ -4,6 +4,7 @@
 
 @section('contenido')
 
+@include('partials.mensajes')
 <br>
 <div class="card">
 
@@ -83,12 +84,14 @@
         @endif
         </td>
     <td>
-        <form action="">
+        <form action="{{ action([App\Http\Controllers\CursoController::class, 'edit'], ['curso' => $curso->id]) }}" method="POST">
+            @csrf
+            @method('PUT')
             <button type="submit" class="float-start btn btn-secondary m-1"><i class="fa-solid fa-pen-to-square"></i> Editar</button>
         </form>
-       <form action="">
-        <button type="submit" class="float-start btn btn-danger m-1"><i class=" fa-solid fa-trash-can"></i> Eliminar</button>
-       </form>
+       <div>
+        <button type="submit" class="float-start btn btn-danger m-1" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class=" fa-solid fa-trash-can"></i> Eliminar</button>
+       </div>
 
     </td>
 </tr>
@@ -103,5 +106,26 @@
     </div>
   </div>
 
-
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Eliminar Curso</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ¿Seguro que desea eliminar el curso {{ $curso->sigles }}?
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <form action="{{ action([App\Http\Controllers\CursoController::class, 'destroy'], ['curso' => $curso->id]) }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-primary" >Eliminar</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
 @endsection
