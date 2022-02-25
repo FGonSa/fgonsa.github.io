@@ -59,6 +59,7 @@ class CursoController extends Controller
 
         try {
             $curso->save();
+            $request->session()->flash('mensaje', 'Curso creado correctamente.');
             $response = redirect()->action([CursoController::class, 'index']);
         } catch (QueryException $ex) {
             $mensaje = Utilitat::errorMessage($ex);

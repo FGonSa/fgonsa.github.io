@@ -1,3 +1,30 @@
+<?php
+function tituloCiclo($id){
+switch($id){
+    case 1: return "Desenvolupament Aplicacions Web";
+    break;
+    case 2: return "Desenvolupament Aplicacions Multiplataforma";
+    break;
+    case 3: return "Màrqueting i Publicitat";
+    break;
+    case 4: return "Administració i Finances";
+    break;
+    case 5: return "Agencia de Viatges i Esdeveniments";
+    break;
+    case 6: return "Assistència a la Direcció";
+    break;
+    case 7: return "Gestió Administrativa";
+    break;
+    case 8: return "Activitats Comercials";
+    break;
+    case 9: return "Comerç Internacional";
+    break;
+    case 10: return "Sistemes Micorinformàtics i Xarxes";
+    break;
+}
+}
+?>
+
 @extends('Plantilla.principal')
 
 @section('title','Cursos')
@@ -50,7 +77,13 @@
 
     </div>
   </div>
+
   <br>
+  @if (empty($cursos))
+  <div class="alert alert-danger text-center mt-3" role="alert">
+      No existen cursos registrados.
+  </div>
+@else
   <div class="card">
     <h4 class="card-header">
         Cursos
@@ -70,7 +103,7 @@
 <tr>
     <td>{{ $curso->sigles }}</td>
     <td>{{ $curso->nom }}</td>
-    <td>{{ $curso->cicles_id}}</td>
+    <td>{{ tituloCiclo($curso->cicles_id )}}</td>
     <td>
         @if ($curso->actiu)
             <div class="custom-control custom-checkbox">
@@ -96,6 +129,9 @@
     </td>
 </tr>
             @endforeach
+            @endif
+
+
             <tbody>
           </table>
           <a href="{{ url('cursos/create') }}" class="float-end add btn btn-dark" role="button" aria-pressed="true">
