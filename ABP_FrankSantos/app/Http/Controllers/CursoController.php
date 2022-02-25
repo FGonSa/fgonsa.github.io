@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Classes\Utilitat;
+use App\Models\Ciclo;
 use App\Models\Curso;
-use Illuminate\Database\QueryException;
+use App\Classes\Utilitat;
 use Illuminate\Http\Request;
+use Illuminate\Database\QueryException;
 
 class CursoController extends Controller
 {
@@ -16,6 +17,8 @@ class CursoController extends Controller
      */
     public function index(Request $request)
     {
+
+        $ciclos = Ciclo::where('id', '>', 0)->get();
         $actiu = $request->input('actiuBuscar');
 
         if ($actiu == 'actiu') {
@@ -23,8 +26,9 @@ class CursoController extends Controller
         } else {
             $cursos = Curso::paginate(6);
         }
+
         $request->session()->flashInput($request->input());
-        return view('cursos.index', compact('cursos'));
+        return view('cursos.index', compact('cursos', 'ciclos'));
     }
 
     /**
@@ -34,7 +38,8 @@ class CursoController extends Controller
      */
     public function create()
     {
-        return view('cursos.create');
+        $ciclos = Ciclo::where('id', '>', 0)->get();
+        return view('cursos.create', compact('ciclos'));
     }
 
     /**
@@ -83,8 +88,8 @@ class CursoController extends Controller
      */
     public function edit(Curso $curso)
     {
-        $curso = Curso::findOrFail($curso->edit);
-        return view('cursos.edit', compact('cursos'));
+        $ciclos = Ciclo::where('id', '>', 0)->get();
+        return view('cursos.edit', compact('curso', 'ciclos'));
     }
 
     /**
@@ -96,8 +101,22 @@ class CursoController extends Controller
      */
     public function update(Request $request, Curso $curso)
     {
-        Curso::where('id', '=', $curso->id)->update($request);
-        return redirect()->action([CursoController::class, 'index']);
+        $curso->sigles = $request->input('sigla');
+        $curso->nom = $request->input('nom');
+        $curso->cicles_id = $request->input('selectCiclo');
+        $curso->actiu = ($request->input('actiuBuscar') == 'actiu');
+
+        try {
+            $curso->update();
+            $request->session()->flash('mensaje', 'Curso modificado correctamente.');
+            $response = redirect()->action([CursoController::class, 'index']);
+        } catch (QueryException $ex) {
+            $mensaje = Utilitat::errorMessage($ex);
+            $request->session()->flash('error', $mensaje);
+            $response = redirect()->action([CursoController::class, 'edit'], ['curso' => $curso->id])->withInput();
+        }
+
+        return $response;
     }
 
     /**

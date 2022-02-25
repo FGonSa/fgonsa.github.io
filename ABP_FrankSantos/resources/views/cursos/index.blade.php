@@ -5,6 +5,7 @@
 @section('contenido')
 
 @include('partials.mensajes')
+
 <br>
 <div class="card">
 
@@ -19,9 +20,9 @@
             <div class="col-sm-9">
               <select class="form-select" id="specificSizeSelect">
                 <option selected>Todos los Ciclos</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                @foreach ($ciclos as $ciclo)
+                    <option>{{ $ciclo->nom }}</option>
+                @endforeach
               </select>
             </div>
             <div class="col-auto">
@@ -69,7 +70,7 @@
 <tr>
     <td>{{ $curso->sigles }}</td>
     <td>{{ $curso->nom }}</td>
-    <td>{{ $curso->cicles_id }}</td>
+    <td>{{ $curso->cicles_id}}</td>
     <td>
         @if ($curso->actiu)
             <div class="custom-control custom-checkbox">
@@ -86,13 +87,12 @@
     <td>
         <form action="{{ action([App\Http\Controllers\CursoController::class, 'edit'], ['curso' => $curso->id]) }}" method="POST">
             @csrf
-            @method('PUT')
+            @method('GET')
             <button type="submit" class="float-start btn btn-secondary m-1"><i class="fa-solid fa-pen-to-square"></i> Editar</button>
         </form>
        <div>
-        <button type="submit" class="float-start btn btn-danger m-1" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class=" fa-solid fa-trash-can"></i> Eliminar</button>
+        <button type="submit" class="float-start btn btn-danger m-1 btn-eliminar" data-bs-toggle="modal" data-bs-target="#exampleModal" data-sigla="{{ $curso->sigles }}" data-action="{{ action([App\Http\Controllers\CursoController::class,'destroy'],['curso'=>$curso->id]) }}"><i class=" fa-solid fa-trash-can" ></i> Eliminar</button>
        </div>
-
     </td>
 </tr>
             @endforeach
@@ -106,8 +106,8 @@
     </div>
   </div>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+   {{-- Modal --}}
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -115,17 +115,19 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          ¿Seguro que desea eliminar el curso {{ $curso->sigles }}?
+          <p id="bodyModal"></p>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-            <form action="{{ action([App\Http\Controllers\CursoController::class, 'destroy'], ['curso' => $curso->id]) }}" method="POST">
+            <form id="modalFormCurso" action="{{ action([App\Http\Controllers\CursoController::class, 'destroy'], ['curso' => $curso->id]) }}" method="POST">
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="btn btn-primary" >Eliminar</button>
+                <button type="submit" class="btn btn-danger">Eliminar</button>
             </form>
         </div>
       </div>
     </div>
   </div>
+
 @endsection
+

@@ -6,7 +6,9 @@
 @section('contenido')
 
 @include('partials.mensajes')
-
+<?php
+$i= 1;
+?>
     <div class="card mt-3">
         <div class="card-header fs-4 d-flex align-items-center bg-dark" style="color: white;">
             Curso
@@ -35,10 +37,11 @@
 
                   <div class="col-sm-11">
                     <select class="form-select" id="selectCiclo" name="selectCiclo">
-                      <option selected value="1">Todos los Ciclos</option>
-                      <option value="2">One</option>
-                      <option value="3">Two</option>
-                      <option value="4">Three</option>
+                      @foreach ($ciclos as $ciclo)
+
+                    <option value = "{{ $i }}">{{ $ciclo->nom }}</option>
+<?php $i++; ?>
+                @endforeach
                     </select>
                   </div>
 
