@@ -18,17 +18,26 @@ class CursoController extends Controller
     public function index(Request $request)
     {
 
-        $ciclos = Ciclo::where('id', '>', 0)->get();
         $actiu = $request->input('actiuBuscar');
+        $categoria = $request->input('categoria');
+        $ciclos = Ciclo::where('id', '>',0)->get();
 
-        if ($actiu == 'actiu') {
-            $cursos = Curso::where('actiu', '=', true)->paginate(6)->withQueryString();
+        if (empty($categoria)) {
+            if ($actiu == 'actiu') {
+                $cursos = Curso::where('actiu', true)->paginate(6)->withQueryString();
+            } else {
+                $cursos = Curso::paginate(6);
+            }
         } else {
-            $cursos = Curso::paginate(6);
+            if ($actiu == 'actiu') {
+                $cursos = Curso::where('actiu', true)->where('cicles_id', $categoria)->paginate(6)->withQueryString();
+            } else {
+                $cursos = Curso::where('cicles_id', $categoria)->paginate(6);
+            }
         }
-
+        $resultados = count($cursos);
         $request->session()->flashInput($request->input());
-        return view('cursos.index', compact('cursos', 'ciclos'));
+        return view('cursos.index', compact('cursos', 'ciclos', 'resultados'));
     }
 
     /**

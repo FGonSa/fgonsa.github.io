@@ -45,10 +45,10 @@ switch($id){
             </div>
 
             <div class="col-sm-9">
-              <select class="form-select" id="specificSizeSelect">
-                <option selected>Todos los Ciclos</option>
+              <select class="form-select" id="categoria" name="categoria">
+                <option  value="0" >Todos los Ciclos</option>
                 @foreach ($ciclos as $ciclo)
-                    <option>{{ $ciclo->nom }}</option>
+                    <option value = "{{ $ciclo->id }}">{{ $ciclo->nom }}</option>
                 @endforeach
               </select>
             </div>
@@ -79,9 +79,9 @@ switch($id){
   </div>
 
   <br>
-  @if (empty($cursos))
-  <div class="alert alert-danger text-center mt-3" role="alert">
-      No existen cursos registrados.
+  @if ($resultados < 1)
+  <div class="alert alert-secondary text-center mt-3" role="alert">
+      Sin resultados.
   </div>
 @else
   <div class="card">
@@ -99,6 +99,7 @@ switch($id){
                 <th scope="col"></th>
               </tr>
             </thead>
+
             @foreach ($cursos as $curso)
 <tr>
     <td>{{ $curso->sigles }}</td>
@@ -128,22 +129,9 @@ switch($id){
        </div>
     </td>
 </tr>
-            @endforeach
-            @endif
 
-
-            <tbody>
-          </table>
-          <a href="{{ url('cursos/create') }}" class="float-end add btn btn-dark" role="button" aria-pressed="true">
-            <i class="fas fa-plus"></i>
-            Añadir Curso
-        </a>
-          {{ $cursos->links() }}
-    </div>
-  </div>
-
-   {{-- Modal --}}
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+{{-- Modal --}}
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -164,6 +152,16 @@ switch($id){
       </div>
     </div>
   </div>
-
+            @endforeach
+            @endif
+            <tbody>
+          </table>
+          <a href="{{ url('cursos/create') }}" class="float-end add btn btn-dark" role="button" aria-pressed="true">
+            <i class="fas fa-plus"></i>
+            Añadir Curso
+        </a>
+          {{ $cursos->links() }}
+    </div>
+  </div>
 @endsection
 
