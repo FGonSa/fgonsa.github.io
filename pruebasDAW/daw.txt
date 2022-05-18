@@ -1,4 +1,0 @@
-Programación
-Base de Datos
-Proyecto
-PHP
